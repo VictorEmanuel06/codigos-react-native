@@ -13,12 +13,12 @@ export interface FoodProps{
     restauranteId: string;
 }
 
-export default function TrendingFoods() {
+export function TrendingFoods() {
     const [foods, setFoods] = useState<FoodProps[]>([])
 
     useEffect(() => {
         async function getFoods() {
-            const response = await fetch("http://10.0.2.2:3000/foods")
+            const response = await fetch("http://192.168.1.9:3000/foods")
             const data = await response.json()
             setFoods(data);
         }

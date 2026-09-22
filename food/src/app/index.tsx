@@ -1,12 +1,14 @@
 import { ScrollView, View, Text } from "react-native";
+import Constants from 'expo-constants';
+
 import { Header } from "@/components/header";
 import { Banner } from "@/components/banner";
 import { Search } from "@/components/search";
 import { Section } from "@/components/section";
+import { TrendingFoods } from "@/components/trending";
 import { Restaurants } from "@/components/restaurants";
-import TrendingFoods from "@/components/trending";
+import { RestaurantVerticalList } from "@/components/list";
 
-import Constants from 'expo-constants';
 
 
 
@@ -44,6 +46,15 @@ export default function Index() {
       />
 
       <Restaurants />
+
+      <Section
+        name="Restaurantes"
+        label="Veja todos"
+        action={() => console.log("CLICOU NO FAMOSOS")}
+        size="text-xl"
+      />
+
+      <RestaurantVerticalList />
 
     </ScrollView >
   );

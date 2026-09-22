@@ -1,6 +1,6 @@
-import { FlatList } from 'react-native';
+import { View, Text } from 'react-native';
 import { useEffect, useState } from 'react';
-import { RestaurantsItem } from './horizontal';
+import { RestaurantItem } from './item';
 
 export interface RestaurantsProps {
     id: string;
@@ -8,7 +8,7 @@ export interface RestaurantsProps {
     image: string;
 }
 
-export function Restaurants() {
+export function RestaurantVerticalList() {
     const [restaurants, setRestaurants] = useState<RestaurantsProps[]>([])
 
     useEffect(() => {
@@ -21,13 +21,12 @@ export function Restaurants() {
         getFoods();
     }, [])
 
+
     return (
-        <FlatList
-            data={restaurants}
-            renderItem={({ item }) => <RestaurantsItem item={item} />}
-            horizontal={true}
-            contentContainerStyle={{ gap: 14, paddingLeft: 16, paddingRight: 16 }}
-            showsHorizontalScrollIndicator={false}
-        />
+        <View className="px-4 flex-1 w-full h-full mb-11 gap-4">
+            {restaurants.map((item) => (
+                <RestaurantItem item={item} key={item.id} />
+            ))}
+        </View>
     );
 }
