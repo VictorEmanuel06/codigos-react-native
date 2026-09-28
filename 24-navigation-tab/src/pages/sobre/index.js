@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
- 
+
 import { useRoute, useNavigation } from '@react-navigation/native';
- 
+
 export default function Sobre(){
-   
+    
     const route = useRoute();
     const navigation = useNavigation();
- 
+
     return(
         <View style={styles.container}>
             <Text>Tela Sobre</Text>
@@ -17,7 +17,7 @@ export default function Sobre(){
         </View>
     )
 }
- 
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,

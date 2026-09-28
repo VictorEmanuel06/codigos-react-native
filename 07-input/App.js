@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
+import {View, Text, StyleSheet, TextInput, Button } from 'react-native';
 
 class App extends Component{
 
@@ -9,8 +9,9 @@ class App extends Component{
       nome: '',
       input: ''
     };
-    // this.pegarNome = this.pegarNome.bind(this)
-
+    
+    //this.pegarNome = this.pegarNome.bind(this)
+    
     this.entrar = this.entrar.bind(this);
   }
 
@@ -24,6 +25,7 @@ class App extends Component{
   }
   */
 
+
   entrar(){
     if(this.state.input === ""){
       alert("Digite o seu nome!");
@@ -33,19 +35,18 @@ class App extends Component{
   }
 
   
-
   render(){
     return(
       <View style={styles.container}>
         <TextInput
-        style={styles.input}
+        styles={styles.input}
         placeholder='Digite o seu nome'
         underlineColorAndroid={'transparent'}
         onChangeText={(texto) => this.setState({input: texto})}
         >
         </TextInput>
-        
-        <Button title='Enviar' onPress={this.entrar} />
+
+        <Button title="Enviar" onPress={this.entrar} />
         <Text style={styles.texto}>{this.state.nome}</Text>
       </View>
     );
@@ -53,14 +54,13 @@ class App extends Component{
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container:{
     flex: 1
   },
   input:{
     height: 45,
     borderWidth: 1,
-    borderColor: "#222222",
-    borderRadius: 8,
+    borderColor: '#222',
     margin: 10,
     fontSize: 20,
     padding: 10

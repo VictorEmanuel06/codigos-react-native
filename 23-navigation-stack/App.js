@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from './src/pages/home';
 import Sobre from './src/pages/sobre';
-import Contato from './src/pages/contato'
+import Contato from './src/pages/contato';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +13,7 @@ export default function App(){
   return(
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name ="Home" component={Home}
+        <Stack.Screen name="Home" component={Home} 
         options={{
           title: 'Tela inicial do App',
           headerStyle:{
@@ -21,18 +21,17 @@ export default function App(){
           },
           headerTintColor: '#a7e121',
           // comando para sumir com o cabeçalho
-          headerShown:false
+          headerShown: false
         }}
-                />
-
-        <Stack.Screen name="sobre" component={Sobre}
+        />
+        <Stack.Screen name="Sobre" component={Sobre} 
         options={{
           title: 'Sobre a empresa'
-        }} />
-
+        }}
+        />
 
         <Stack.Screen name="Contato" component={Contato} />
-        
+
       </Stack.Navigator>
     </NavigationContainer>
   )

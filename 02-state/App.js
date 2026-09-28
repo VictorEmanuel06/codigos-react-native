@@ -1,11 +1,11 @@
-import React, { Component }from 'react';
+import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 
 class App extends Component{
-  
-  constructor(props){
-    super(props)
 
+  constructor(props){
+    super(props);
+    
     this.state = {
       nome: ''
     };
@@ -15,17 +15,17 @@ class App extends Component{
   }
 
   entrar(){
-    this.setState({
-      nome: 'Victor Emanuel'
-    })
+      this.setState({
+        nome: 'Ana Claudia'
+      })
   }
 
   render(){
     return(
-      <View style={{ marginTop: 100 }}>
-        <Button title="Entrar" onPress={this.entrar}/>
+      <View style={{ marginTop: 50 }}>
+        <Button title="Entrar" onPress={this.entrar} /> 
 
-        <Text style={{ fontSize: 23, color: 'blue', textAlign: 'center' }}>
+        <Text style={{ fontSize: 23, color: 'orange', textAlign: 'center'}}>
           {this.state.nome}
         </Text>
       </View>

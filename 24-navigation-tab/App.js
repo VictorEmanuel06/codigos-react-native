@@ -11,10 +11,10 @@ import Contato from './src/pages/contato';
 
 const Tab = createBottomTabNavigator();
 
-export default function App() {
-  return (
+export default function App(){
+  return(
     <NavigationContainer>
-      <Tab.Navigator
+     <Tab.Navigator
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: '#ffa1a1',
@@ -22,34 +22,32 @@ export default function App() {
           backgroundColor: '#680209',
           borderTopWidth: 0
         }
+      }}     
+     >
+
+      <Tab.Screen name='Home' component={Home} 
+      options={{
+        tabBarIcon:({ color, size }) => {
+          return <Feather name="home" color={color} size={size} />
+        }
       }}
-      >
-    
-        <Tab.Screen name='Home' component={Home}
-          options={{
-            tabBarIcon: ({ color, size }) => {
-              return <Feather name="home" color={color} size={size} />
-            }
-          }}
-        />
+      />
 
-        <Tab.Screen name='Sobre' component={Sobre}
-          options={{
-            tabBarIcon: ({ color, size }) => {
-              return <Feather name="file-text" color={color} size={size} />
-            }
-          }}
-
-        />
-        <Tab.Screen name='Contato' component={Contato}
-          options={{
-            tabBarIcon: ({ color, size }) => {
-              return <Feather name="phone-call" color={color} size={size} />
-            }
-          }}
-
-        />
-      </Tab.Navigator>
+      <Tab.Screen name='Sobre' component={Sobre} 
+        options={{
+        tabBarIcon:({ color, size }) => {
+          return <Feather name="file-text" color={color} size={size} />
+        }
+      }}
+      />
+      <Tab.Screen name='Contato' component={Contato} 
+        options={{
+        tabBarIcon:({ color, size }) => {
+          return <Feather name="phone-call" color={color} size={size} />
+        }
+      }}
+      />
+     </Tab.Navigator>
     </NavigationContainer>
   )
 }

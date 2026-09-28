@@ -1,17 +1,17 @@
 import React, { useRef } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
- 
+
 import * as Animatable from 'react-native-animatable';
- 
+
 export default function App(){
- 
-  const ButtonAnimated = Animatable.createAnimatableComponent(TouchableOpacity)
+
+  const ButtonAnimated = Animatable.createAnimatableComponent(TouchableOpacity);
   const buttonRef = useRef(null);
- 
+
   function handleClick(){
     buttonRef.current.bounce()
   }
- 
+
   return(
     <View style={styles.container}>
       <Animatable.Text
@@ -24,19 +24,19 @@ export default function App(){
       >
         Meu aplicativo
       </Animatable.Text>
- 
-     <ButtonAnimated style={styles.button}
+
+     <ButtonAnimated style={styles.button} 
      //animation="fadeInUp"
-     animation="lightSpeedIn"
-     ref={buttonRef}
-     onPress={handleClick}
+      animation="lightSpeedIn"
+      ref={buttonRef}
+      onPress={handleClick}
      >
       <Text style={{color: "#fff"}}>Animar</Text>
      </ButtonAnimated>
     </View>
   )
 }
- 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

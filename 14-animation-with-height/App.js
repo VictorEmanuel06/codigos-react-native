@@ -1,19 +1,18 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef, useEffect } from 'react';
 import { View, Text, StyleSheet, Animated } from 'react-native';
 
 export default function App(){
-
-  const larguraAnimada = useRef(new Animated.Value(150)).current;
-  const alturaAnimada = useRef(new Animated.Value(50)).current;
+  const larguraAnimada = useRef(new Animated.Value(150)).current; 
+  const alturaAnimada = useRef(new Animated.Value(50)).current; 
 
   useEffect(() => {
     // Largura animada vai de 150 até 300
-    
-    // Animated.timing(larguraAnimada, {
-    //   toValue: 300,
-    //   duration: 2000,
-    //   useNativeDriver: false
-    // }).start();
+  /*Animated.timing(larguraAnimada, {
+      toValue: 300,
+      duration: 2000,
+      useNativeDriver: false
+    }).start();
+  */
 
     //Altura animada que vai de 50 até 300
     Animated.timing(alturaAnimada, {
@@ -22,7 +21,6 @@ export default function App(){
       useNativeDriver: false
     }).start();
   }, [])
-
 
   return(
     <View style = {styles.container}>
@@ -46,6 +44,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alingItems: 'center'
+    alignItems: 'center'
   }
 })
